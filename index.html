@@ -1,72 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ahmed's Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      text-align:center;
-      background:#f4f4f4;
-      padding:20px;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Driver</title>
 
-    .card{
-      background:white;
-      max-width:500px;
-      margin:auto;
-      padding:20px;
-      border-radius:15px;
-      box-shadow:0 0 10px rgba(0,0,0,0.1);
-    }
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    text-align:center;
+    padding:20px;
+}
 
-    img{
-      width:150px;
-      height:150px;
-      border-radius:50%;
-      object-fit:cover;
-    }
+.card{
+    background:white;
+    max-width:500px;
+    margin:auto;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
 
-    button{
-      padding:12px 20px;
-      border:none;
-      border-radius:10px;
-      font-size:16px;
-    }
-  </style>
+img{
+    width:200px;
+    border-radius:15px;
+}
+
+.button{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 20px;
+    background:#007bff;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="card">
-  <h1>Ahmed</h1>
 
-  <p>Computer Science Student</p>
+    <img src="driver.jpg" alt="Driver Photo">
 
-  <h2>My Car</h2>
-  <p>Add your car details here</p>
+    <h1>Hi, I'm Yassin Sabe Abdelkader</h1>
 
-  <h2>Location</h2>
-  <button onclick="getLocation()">Show My Location</button>
+    <p>
+        I will be your driver for today.
+    </p>
 
-  <p id="location"></p>
+    <a class="button" href="driver-id.pdf" target="_blank">
+        View My ID Here
+    </a>
+
 </div>
-
-<script>
-function getLocation() {
-  navigator.geolocation.getCurrentPosition(
-    function(position){
-      document.getElementById("location").innerHTML =
-      "Latitude: " + position.coords.latitude +
-      "<br>Longitude: " + position.coords.longitude;
-    },
-    function(){
-      document.getElementById("location").innerHTML =
-      "Location permission denied.";
-    }
-  );
-}
-</script>
 
 </body>
 </html>
