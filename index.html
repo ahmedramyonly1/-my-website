@@ -11,6 +11,48 @@ body{
     color:white;
     text-align:center;
     padding:20px;
+    overflow-x:hidden;
+}
+
+/* Opening car animation */
+.intro{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:radial-gradient(circle at center, #1a1a1a, #000);
+    z-index:9999;
+    animation:hideIntro 3s forwards;
+}
+
+.car{
+    position:absolute;
+    top:45%;
+    left:-150px;
+    font-size:85px;
+    animation:drive 2.4s ease-in-out forwards;
+    filter:drop-shadow(0 0 15px #d4af37);
+}
+
+.road{
+    position:absolute;
+    top:58%;
+    left:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(90deg, transparent, #d4af37, transparent);
+    box-shadow:0 0 15px #d4af37;
+}
+
+@keyframes drive{
+    from{ left:-150px; }
+    to{ left:110%; }
+}
+
+@keyframes hideIntro{
+    0%,85%{ opacity:1; visibility:visible; }
+    100%{ opacity:0; visibility:hidden; }
 }
 
 .card{
@@ -20,7 +62,9 @@ body{
     padding:28px;
     border-radius:24px;
     border:2px solid #d4af37;
-    box-shadow:0 0 25px rgba(212,175,55,0.45);
+    box-shadow:
+        0 0 25px rgba(212,175,55,0.45),
+        inset 0 0 20px rgba(255,255,255,0.04);
 }
 
 img{
@@ -32,6 +76,7 @@ img{
 
 h1{
     color:#d4af37;
+    text-shadow:0 0 10px rgba(212,175,55,0.5);
 }
 
 p{
@@ -43,14 +88,14 @@ p{
     display:block;
     margin:16px auto;
     padding:15px 22px;
-    background: linear-gradient(135deg, #b8860b, #ffd700, #d4af37, #8b6508);
+    background: linear-gradient(135deg, #8b6508, #d4af37, #f5d76e, #b8860b);
     color:#050505;
     text-decoration:none;
     border-radius:14px;
     font-weight:bold;
     max-width:270px;
     border:1px solid #f5d76e;
-    box-shadow:0 0 15px rgba(212,175,55,0.55);
+    box-shadow:0 0 18px rgba(212,175,55,0.65);
 }
 
 .menu-btn{
@@ -65,6 +110,11 @@ p{
 </head>
 
 <body>
+
+<div class="intro">
+    <div class="car">🚘</div>
+    <div class="road"></div>
+</div>
 
 <div class="card">
 
