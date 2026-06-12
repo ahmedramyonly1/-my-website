@@ -14,45 +14,35 @@ body{
     overflow-x:hidden;
 }
 
-/* Opening car animation */
 .intro{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background:radial-gradient(circle at center, #1a1a1a, #000);
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     z-index:9999;
-    animation:hideIntro 3s forwards;
+    animation:hideIntro 5s forwards;
 }
 
-.car{
-    position:absolute;
-    top:45%;
-    left:-150px;
-    font-size:85px;
-    animation:drive 2.4s ease-in-out forwards;
-    filter:drop-shadow(0 0 15px #d4af37);
-}
-
-.road{
-    position:absolute;
-    top:58%;
-    left:0;
-    width:100%;
-    height:4px;
-    background:linear-gradient(90deg, transparent, #d4af37, transparent);
-    box-shadow:0 0 15px #d4af37;
-}
-
-@keyframes drive{
-    from{ left:-150px; }
-    to{ left:110%; }
+.lambo-gif{
+    width:90%;
+    max-width:700px;
+    filter:drop-shadow(0 0 25px #d4af37);
 }
 
 @keyframes hideIntro{
-    0%,85%{ opacity:1; visibility:visible; }
-    100%{ opacity:0; visibility:hidden; }
+    0%,85%{
+        opacity:1;
+        visibility:visible;
+    }
+    100%{
+        opacity:0;
+        visibility:hidden;
+    }
 }
 
 .card{
@@ -62,9 +52,7 @@ body{
     padding:28px;
     border-radius:24px;
     border:2px solid #d4af37;
-    box-shadow:
-        0 0 25px rgba(212,175,55,0.45),
-        inset 0 0 20px rgba(255,255,255,0.04);
+    box-shadow:0 0 25px rgba(212,175,55,0.45);
 }
 
 img{
@@ -112,8 +100,7 @@ p{
 <body>
 
 <div class="intro">
-    <div class="car">🚘</div>
-    <div class="road"></div>
+    <img src="lambo.gif" class="lambo-gif" alt="Lamborghini Animation">
 </div>
 
 <div class="card">
